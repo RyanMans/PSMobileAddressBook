@@ -13,6 +13,10 @@
 
 #import "NSString+PS.h"
 #import "UIView+PS.h"
+#import "UIImage+PS.h"
+
+// 日志宏
+#define LogFunctionName() NSLog(@"<%@> %s", [[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent], __FUNCTION__)
 
 
 #define MinMutableCount 4UL
@@ -20,7 +24,12 @@
 #define IsKindOfClass(x, y)       [x isKindOfClass:[y class]]
 #define IsSameString(x, y)        ([x isEqualToString:y])
 
+#define StringHasSubstring(x, y)  ([x rangeOfString:y].length)
+
+
+
 #define NewClass(x)               [[x alloc] init]
+#define NewButton() [UIButton buttonWithType:UIButtonTypeCustom]
 #define NewMutableArray()         [NSMutableArray arrayWithCapacity:MinMutableCount]
 #define NewMutableDictionary() [NSMutableDictionary dictionaryWithCapacity:MinMutableCount]
 
@@ -48,5 +57,9 @@
 #define HEXCOLOR(rgbValue)   HEXCOLORAlpha(rgbValue, 1.0)
 // 字体宏
 #define FontOfSize(x)   [UIFont systemFontOfSize:x]
+
+#define  weakSelf(x)      __weak typeof(self) x = self;
+
+
 
 #endif /* PrefixHeader_pch */

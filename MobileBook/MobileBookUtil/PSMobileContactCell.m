@@ -34,11 +34,14 @@
 {
     return CELL_ROE_HEIGHT;
 }
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         self.userInteractionEnabled = YES;
         
         _avatarView = NewClass(UIImageView);
@@ -80,6 +83,10 @@
         _lineView.y = CELL_ROE_HEIGHT - _lineView.height;
         _lineView.width = SCREEN_WIDTH - _lineView.x;
         [self.contentView addSubview:_lineView];
+        
+        
+        
+        
         
     }
     return self;

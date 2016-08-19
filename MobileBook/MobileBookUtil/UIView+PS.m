@@ -116,4 +116,45 @@
     self.layer.borderWidth	= width;
 }
 
+
+//遍历子类控件
+- (NSMutableArray *)findSubviewWithClass:(Class)cls maxCount:(NSUInteger)count
+{
+    return [self findSubviewWithClassEx:cls maxCount:count mustNil:nil];
+}
+
+- (NSMutableArray *)findSubviewWithClassEx:(Class)cls maxCount:(NSUInteger)count mustNil:(id)mustNil
+{
+    NSMutableArray *temp = mustNil;
+    
+    if (nil == temp) {
+        temp = NewMutableArray();
+    }
+    
+    for (UIView *view in self.subviews) {
+        if (IsKindOfClass(view, cls)) {
+            [temp addObject:view];
+            
+            if (count && (temp.count == count)) {
+                return temp;
+            }
+        }
+        
+        if (view.subviews.count) {
+            [view findSubviewWithClassEx:cls maxCount:count mustNil:temp];
+            
+            if (count && (temp.count == count)) {
+                return temp;
+            }
+        }
+    }
+    
+    if (0 == temp.count) {
+        return nil;
+    }
+    
+    return temp;
+}
+
+
 @end

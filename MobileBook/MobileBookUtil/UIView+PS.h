@@ -21,4 +21,7 @@
 //Method
 - (void)setLayerWithCr:(CGFloat)cornerRadius;
 - (void)setBorderWithColor: (UIColor *)color width: (CGFloat)width;
+
+//遍历子类控件
+- (NSMutableArray *)findSubviewWithClass: (Class)cls maxCount: (NSUInteger)count;
 @end

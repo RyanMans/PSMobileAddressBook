@@ -6,13 +6,13 @@
 //  Copyright © 2016年 Ryan_Man. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "PSMobileBookViewController.h"
-@interface AppDelegate ()
+#import "PSAppDelegate.h"
+#import "PSTabBarViewController.h"
+@interface PSAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation PSAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -26,14 +26,13 @@
     [[UINavigationBar  appearance] setBarTintColor:RGB(32,177,232)];
     [[UINavigationBar  appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     [[UINavigationBar  appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar   appearance] setTranslucent:NO];
 
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PSMobileBookViewController * mobileContactVC = [[PSMobileBookViewController alloc] init];
-    UINavigationController * navigationVC = [[UINavigationController alloc] initWithRootViewController:mobileContactVC];
-    self.window.rootViewController = navigationVC;
+    self.window.rootViewController = NewClass(PSTabBarViewController);
     
     [self.window makeKeyAndVisible];
     return YES;
