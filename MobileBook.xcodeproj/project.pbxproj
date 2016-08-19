@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152C53DC1D669EC90003BEFA /* PSPyqView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152C53DB1D669EC90003BEFA /* PSPyqView.m */; };
+		152C53DF1D66FF5C0003BEFA /* PSSearchTypeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 152C53DE1D66FF5C0003BEFA /* PSSearchTypeMenu.m */; };
 		157957C51D1B7F22000DA44D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 157957C41D1B7F22000DA44D /* main.m */; };
 		157957C81D1B7F22000DA44D /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 157957C71D1B7F22000DA44D /* PSAppDelegate.m */; };
 		157957CB1D1B7F22000DA44D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157957CA1D1B7F22000DA44D /* ViewController.m */; };
@@ -58,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		152C53DA1D669EC90003BEFA /* PSPyqView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPyqView.h; sourceTree = "<group>"; };
+		152C53DB1D669EC90003BEFA /* PSPyqView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPyqView.m; sourceTree = "<group>"; };
+		152C53DD1D66FF5C0003BEFA /* PSSearchTypeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSearchTypeMenu.h; sourceTree = "<group>"; };
+		152C53DE1D66FF5C0003BEFA /* PSSearchTypeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSearchTypeMenu.m; sourceTree = "<group>"; };
 		157957C01D1B7F22000DA44D /* MobileBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		157957C41D1B7F22000DA44D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		157957C61D1B7F22000DA44D /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				157958251D1B83CD000DA44D /* PSMobileBookViewController.m */,
 				15E246FA1D655C8700987852 /* PSCustomViewController.h */,
 				15E246FB1D655C8700987852 /* PSCustomViewController.m */,
+				152C53DA1D669EC90003BEFA /* PSPyqView.h */,
+				152C53DB1D669EC90003BEFA /* PSPyqView.m */,
+				152C53DD1D66FF5C0003BEFA /* PSSearchTypeMenu.h */,
+				152C53DE1D66FF5C0003BEFA /* PSSearchTypeMenu.m */,
 				15E247001D65809400987852 /* PSSearchBar.h */,
 				15E247011D65809400987852 /* PSSearchBar.m */,
 				15E246FD1D655FDC00987852 /* PSCustomMenu.h */,
@@ -431,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152C53DC1D669EC90003BEFA /* PSPyqView.m in Sources */,
 				157957CB1D1B7F22000DA44D /* ViewController.m in Sources */,
 				157958321D1B8796000DA44D /* PSMobileContactCell.m in Sources */,
 				157957FF1D1B80B9000DA44D /* PSBaseModel.m in Sources */,
@@ -449,6 +460,7 @@
 				157958261D1B83CD000DA44D /* PSMobileBookViewController.m in Sources */,
 				157958051D1B8110000DA44D /* NSString+PS.m in Sources */,
 				15E246F91D65587800987852 /* PSTabBarViewController.m in Sources */,
+				152C53DF1D66FF5C0003BEFA /* PSSearchTypeMenu.m in Sources */,
 				157957FC1D1B808D000DA44D /* PSMobileBookUtil.m in Sources */,
 				157958291D1B8649000DA44D /* UIView+PS.m in Sources */,
 				157958221D1B829A000DA44D /* YYClassInfo.m in Sources */,

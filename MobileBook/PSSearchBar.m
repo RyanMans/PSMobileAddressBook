@@ -9,6 +9,9 @@
 #import "PSSearchBar.h"
 @interface PSSearchBar ()<UITextFieldDelegate>
 {
+    
+    UIButton * _backButton;
+    
     UIImageView * _searchImageView;
     
     UIButton * _cancelButton;
@@ -16,6 +19,9 @@
     UIButton * _cleanButton;
     
     UIView * _seachContentView;
+    
+    
+    CGFloat _placeholderW;
 }
 @end
 @implementation PSSearchBar
@@ -34,6 +40,19 @@
         self.backgroundColor = HEXCOLOR(0xf8f8f9);
         self.layer.anchorPoint = CGPointMake(0, 0.5); //修改中心点，圆轴
         
+        _backButton = NewClass(UIButton);
+        _backButton.backgroundColor = [UIColor clearColor];
+        _backButton.height = HalfF(88);
+        _backButton.width = HalfF(60);
+        _backButton.x = - _backButton.width;
+        _backButton.y = HalfF(40);
+        [_backButton setTitle:@"<" forState:(UIControlStateNormal)];
+        [_backButton setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+        _backButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        
+        [_backButton addTarget:self action:@selector(backEvent:) forControlEvents:(UIControlEventTouchUpInside)];
+        
+        [self addSubview:_backButton];
         
         //取消按钮
         _cancelButton = NewButton();
@@ -60,6 +79,11 @@
         [_seachContentView setLayerWithCr:5.0];
         [self addSubview:_seachContentView];
         
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSearchEvent:)];
+        [_seachContentView addGestureRecognizer:tap];
+        
+        
         //搜索图标
         _searchImageView = NewClass(UIImageView);
         _searchImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -73,7 +97,6 @@
         
         
         //清除按钮
-        
         
         _cleanButton = NewButton();
         _cleanButton.userInteractionEnabled = YES;
@@ -116,16 +139,103 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
         
+        _placeholderW = [_textfield.placeholder sizeWithAttributes:@{NSFontAttributeName:_textfield.font}].width;
+        
+        self.isSearchState = YES;
 
-        
-        
     }
     return self;
 }
 
+- (void)backEvent:(UIButton*)sender
+{
+    self.type = 0;
+    
+}
+
+- (void)setType:(NSInteger)type
+{
+    
+    if (type == 0)
+    {
+        [UIView animateWithDuration:0.25f animations:^{
+            
+            _backButton.x = - _backButton.width;
+            _seachContentView.x = HalfF(30);
+            _seachContentView.width = _cancelButton.x - HalfF(25) - _seachContentView.x;
+        }];
+        
+    }
+    
+    else if (type == 1)
+    {
+        [UIView animateWithDuration:0.25f animations:^{
+            
+            _backButton.x = 0;
+            _seachContentView.x = CGRectGetMaxX(_backButton.frame);
+            _seachContentView.width = _cancelButton.x - HalfF(25) - _seachContentView.x;
+        }];
+        
+    }
+}
+
+- (void)tapSearchEvent:(UITapGestureRecognizer*)aTap
+{
+    if (_isSearchState) return;
+    
+    [_textfield becomeFirstResponder];
+}
+
+- (void)setIsSearchState:(BOOL)isSearchState
+{
+    _isSearchState = isSearchState;
+    
+    if (_isSearchState)
+    {
+        [self textFieldWillBeginEditing];
+    }
+    else
+    {
+        [self textFieldWillEndEditing];
+    }
+}
+
+- (void)textFieldWillBeginEditing
+{
+    LogFunctionName();
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        
+        _searchImageView.x = HalfF(10);
+        _textfield.x = CGRectGetMaxX(_searchImageView.frame) + HalfF(10);
+        _textfield.width = _cleanButton.x - _textfield.x - HalfF(10);
+        
+    }];
+}
+
+- (void)textFieldWillEndEditing
+{
+    LogFunctionName();
+
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        
+       CGFloat w = _searchImageView.width + _placeholderW + HalfF(20);
+
+        _searchImageView.x = _seachContentView.centerX - w / 2 ;
+        
+        _textfield.x = CGRectGetMaxX(_searchImageView.frame) +  HalfF(10);
+        _textfield.width = _cleanButton.x - _textfield.x - HalfF(10);
+    }];
+}
+
+
+
 - (void)cancelEvent:(UIButton*)sender
 {
     LogFunctionName();
+    
+
     if (self.cancelBlock) {
         self.cancelBlock();
     }
