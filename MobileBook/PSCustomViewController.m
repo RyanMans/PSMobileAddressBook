@@ -12,6 +12,7 @@
 
 #import "PSPyqView.h"
 #import "PSSearchTypeMenu.h"
+#import "PSPullDownMenu.h"
 
 static const NSTimeInterval kISControllerAnimationDuration = 0.5;
 static const CGFloat kISControllerOpeningAnimationSpringDamping = 0.7f;
@@ -27,8 +28,9 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     ISControllerStateClosing
 };
 
-@interface PSCustomViewController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
+@interface PSCustomViewController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate,PSSearchBarDelegate>
 {
+    PSPullDownMenu * _pullDownMenu;
     PSCustomMenu * _menu;
     
     PSSearchBar * _searchBar;
@@ -62,28 +64,11 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
  
     [self  setupTableView];
     
+    [self  setupPullDownMenu];
+    
     [self  loadAllDataSource];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
 }
-
-- (void)keyboardWillShow:(NSNotification*)noti
-{
-    LogFunctionName();
-    _searchBar.isSearchState = YES;
-}
-
-- (void)keyboardWillHide:(NSNotification*)noti
-{
-    LogFunctionName();
-    _searchBar.isSearchState = NO;
-
-}
-
-
 - (void)setupMenu
 {
     weakSelf(ws);
@@ -102,15 +87,35 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     _displayTableView.dataSource = self;
     _displayTableView.showsVerticalScrollIndicator = NO;
     _displayTableView.backgroundColor =  RGB(248, 248, 248);
+    
     [self.view addSubview:_displayTableView];
     
     _displayTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+}
+
+- (void)setupPullDownMenu
+{
+    weakSelf(ws);
+    
+    NSArray *typeArr = @[@{@"title":@"按时间排序",@"icon":@"nd_order_time_big"},
+                         @{@"title":@"按文件名排序",@"icon":@"nd_order_cha_big"},
+                         @{@"title":@"全部",@"icon":@"nd_sort_all"},
+                         @{@"title":@"文档",@"icon":@"nd_sort_doc"},
+                         @{@"title":@"图片",@"icon":@"nd_sort_pic"},
+                         @{@"title":@"其他",@"icon":@"nd_sort_other"}];
+    
+    _pullDownMenu = [PSPullDownMenu pullDownMenuWithSource:typeArr];
+    
+    _pullDownMenu.pullDownMenuActionBlock = ^(NSInteger selectIndex)
+    {
+        
+    };
     
 }
 
 - (void)keyHide:(UITapGestureRecognizer*)aTap
 {
-    [_searchBar.textfield resignFirstResponder];
+    [_searchBar ps_ResignFirstResponder];
 }
 
 - (void)loadAllDataSource
@@ -135,15 +140,20 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     //搜索
     if (type == 1)
     {
-        
         [self showSearchMode:YES];
-        
     }
     //展开列表
     else if (type == 2)
     {
+        if (_pullDownMenu.isShow)
+        {
+            [_pullDownMenu hideMenuAnimation:YES];
+        }
+        else
+        {
+            [_pullDownMenu showInView:self.view underView:_menu];
+        }
         
-        [self showSearchMode:NO];
     }
 }
 
@@ -159,10 +169,7 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         if (!_searchBar) {
             
             _searchBar = [PSSearchBar searchBar];
-            _searchBar.cancelBlock = ^()
-            {
-                [ws showSearchMode:NO];
-            };
+            _searchBar.delegate = self;
         }
         
         if (!_typeMenu)
@@ -183,8 +190,10 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         }
         
         //理解为编辑状态
-        _searchBar.type = 0;
-        _searchBar.isSearchState = YES;
+        _searchBar.style = PSSearchBarStyleDefault;
+        
+        //开始进入编辑
+        [_searchBar ps_SearchBarWillBeginEditing];
         
         _searchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, HalfF(128));
         _searchBar.transform = CGAffineTransformMakeScale(0, 0.4);
@@ -192,11 +201,14 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         _typeMenu.frame = CGRectMake(0, 64, SCREEN_WIDTH, VALID_VIEW_HEIGHT);
         
         _typeMenu.contentSize = CGSizeMake(SCREEN_WIDTH, VALID_VIEW_HEIGHT + 10);
+        
         [self.view addSubview:_searchBar];
         [self.view addSubview:_typeMenu];
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
         
+        self.tabBarController.tabBar.hidden = YES;
+
         [UIView animateWithDuration:0.3f animations:^{
           
             [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -206,19 +218,22 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
             _typeMenu.hidden = NO;
             [self.view bringSubviewToFront:_typeMenu];
             
-            
         } completion:^(BOOL finished) {
             
-            [_searchBar.textfield becomeFirstResponder];
+            self.tabBarController.tabBar.hidden = YES;
+
+            [_searchBar ps_BecomeFirstResponder];
         }];
         
         return;
     }
+    [_searchBar ps_CleanSearchText];
     
-    _searchBar.textfield.text = nil;
-
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     
+    self.tabBarController.tabBar.hidden = NO;
+
     [UIView animateWithDuration:0.3f animations:^{
         
         [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -232,15 +247,13 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         
     } completion:^(BOOL finished) {
         
-        [_searchBar.textfield resignFirstResponder];
+        [_searchBar resignFirstResponder];
         _searchBar.transform = CGAffineTransformMakeScale(1, 1);
 
         [_searchBar removeFromSuperview];
         
         [_typeMenu removeFromSuperview];
     }];
-    
-    [self showPyqView:NO];
     
 }
 
@@ -249,6 +262,46 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     [self showPyqView:YES];
 }
 
+#pragma mark - PSSearchDelegate -
+- (void)ps_SearchBarCancelButtonClicked:(PSSearchBar *)searchBar
+{
+    LogFunctionName();
+    [self showPyqView:NO];
+    [self showSearchMode:NO];
+}
+
+- (void)ps_SearchBarBackButtonClicked:(PSSearchBar *)searchBar
+{
+    LogFunctionName();
+    
+    [self showPyqView:NO];
+}
+
+- (void)ps_SearchBarSearchButtonClicked:(PSSearchBar *)searchBar
+{
+    
+    LogFunctionName();
+    
+}
+
+- (void)ps_SearchBar:(PSSearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    LogFunctionName();
+
+}
+
+- (void)ps_SearchBarTextDidBeginEditing:(PSSearchBar *)searchBar
+{
+    
+    LogFunctionName();
+
+}
+
+- (void)ps_SearchBarTextDidEndEditing:(PSSearchBar *)searchBar
+{
+    LogFunctionName();
+
+}
 
 #pragma mark - UITableViewDelegate -
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -288,7 +341,7 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     [self keyHide:nil];
 }
 
-
+#pragma mark - 手势-
 - (void)showPyqView:(BOOL)isPyq
 {
     if (_isPyq == isPyq)  return;
@@ -299,13 +352,17 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     {
         if (!_pyqView)
         {
-            _pyqView = NewClass(PSPyqView);
-            _pyqView.userInteractionEnabled = YES;
-            _pyqView.backgroundColor = [UIColor orangeColor];
+            _pyqView = [PSPyqView ps_PyqViewWithY:HalfF(128)];
+            _pyqView.delegate = self;
         }
-        
-        _pyqView.frame = CGRectMake(SCREEN_WIDTH, HalfF(128), SCREEN_WIDTH, VALID_VIEW_HEIGHT);
 
+        _pyqView.frame = CGRectMake(SCREEN_WIDTH, HalfF(128), SCREEN_WIDTH, VALID_VIEW_HEIGHT);
+        _pyqView.contentSize = CGSizeMake(SCREEN_WIDTH, VALID_VIEW_HEIGHT + 10);
+
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyHide:)];
+
+        [_pyqView addGestureRecognizer:tap];
+        
         UIPanGestureRecognizer  * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
         pan.delegate = self;
         
@@ -313,7 +370,7 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         
         [self.view addSubview:_pyqView];
         
-        _searchBar.type = 1;
+        _searchBar.style = PSSearchBarStyleCanBack;
         
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -326,7 +383,8 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     [UIView animateWithDuration:0.25f animations:^{
         
         _pyqView.x = SCREEN_WIDTH;
-
+        
+        [_searchBar ps_SearchBarStrle:PSSearchBarStyleCanBack AmiantionWithVelocity:_pyqView.x];
         
     } completion:^(BOOL finished) {
         
@@ -342,13 +400,17 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
     
     CGPoint velocity = [(UIPanGestureRecognizer *)gestureRecognizer velocityInView:self.view];
     
-    if (self.vcState == ISControllerStateClosed && velocity.x > 0.0f) {
-        return YES;
+    CGPoint location = [(UIPanGestureRecognizer *)gestureRecognizer locationInView:_pyqView];
+
+    if (location.x <= HalfF(100))
+    {
+        if (self.vcState == ISControllerStateClosed && velocity.x > 0.0f) {
+            return YES;
+        }
+        else if (self.vcState == ISControllerStateOpen && velocity.x < 0.0f) {
+            return YES;
+        }
     }
-    else if (self.vcState == ISControllerStateOpen && velocity.x < 0.0f) {
-        return YES;
-    }
-    
     return NO;
 }
 
@@ -369,8 +431,6 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
         case UIGestureRecognizerStateBegan:
         {
             self.panGestureStartLocation = location;
-            
-            NSLog(@" start p -- %f",self.panGestureStartLocation.x);
             
             if (self.vcState == ISControllerStateClosed)
             {
@@ -414,6 +474,11 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
             }
             
             _pyqView.x = _pyqX;
+            
+            [_searchBar ps_SearchBarStrle:PSSearchBarStyleCanBack AmiantionWithVelocity:_pyqView.x];
+            
+//            NSLog(@"-- py %f----",_pyqView.x);
+            
         }
         break;
             
@@ -474,22 +539,33 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
 
 - (void)willOpen
 {
+    LogFunctionName();
+    
     self.vcState = ISControllerStateOpening;
     
 }
 
 - (void)didOpen
 {
+    LogFunctionName();
+
+    [_searchBar ps_SearchBarStrle:PSSearchBarStyleCanBack AmiantionWithVelocity:SCREEN_WIDTH];
     self.vcState = ISControllerStateOpen;
 }
 
 - (void)willClose
 {
+    LogFunctionName();
+
     self.vcState = ISControllerStateClosing;
     
 }
 - (void)didClose
 {
+    LogFunctionName();
+
+    [_searchBar ps_SearchBarStrle:PSSearchBarStyleCanBack AmiantionWithVelocity:0];
+
     self.vcState = ISControllerStateClosed;
     
 }
@@ -525,6 +601,8 @@ typedef NS_ENUM(NSUInteger, ISControllerState)
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          _pyqView.x =  0;
+                         
+                         [_searchBar ps_SearchBarStrle:PSSearchBarStyleCanBack AmiantionWithVelocity:_pyqView.x];
                      }
                      completion:^(BOOL finished) {
                          [self didClose];

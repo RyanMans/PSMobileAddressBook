@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSPyqView : UIView
-
+@interface PSPyqView : UIScrollView
++ (PSPyqView*)ps_PyqViewWithY:(CGFloat)y;
 @end

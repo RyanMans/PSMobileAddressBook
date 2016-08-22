@@ -15,7 +15,7 @@
 @implementation PSSearchTypeMenu
 + (PSSearchTypeMenu*)SearchTypeMenuWithY:(CGFloat)y
 {
-    PSSearchTypeMenu * menu = [[PSSearchTypeMenu alloc] initWithFrame:CGRectMake(0, y, SCREEN_WIDTH, SCREEN_WIDTH-y)];
+    PSSearchTypeMenu * menu = [[PSSearchTypeMenu alloc] initWithFrame:CGRectMake(0, y, SCREEN_WIDTH, SCREEN_HEIGHT-y)];
     return menu;
 }
 
@@ -26,6 +26,8 @@
         
         self.userInteractionEnabled = YES;
         self.showsVerticalScrollIndicator = NO;
+        
+        self.backgroundColor = HEXCOLOR(0xebeff6);
         NSArray * titles = @[@"朋友圈",@"文章",@"公众号"];
         
         
