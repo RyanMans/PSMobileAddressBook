@@ -14,3 +14,11 @@
 #### 要点：数据源分组处理
 ![](mobileBookGif/数据处理1.png)
 ![](mobileBookGif/数据处理2.png)
+
+## Author
+
+ALLen、LAS, 1696186412@qq.com
+
+## License
+
+XKMobileAddressBook is available under the MIT license. See the LICENSE file for more info.
