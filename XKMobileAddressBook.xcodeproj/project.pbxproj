@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1952527920A152AD00DAC071 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952527820A152AD00DAC071 /* AppDelegate.m */; };
+		1952527C20A152AD00DAC071 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952527B20A152AD00DAC071 /* ViewController.m */; };
+		1952527F20A152AD00DAC071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1952527D20A152AD00DAC071 /* Main.storyboard */; };
+		1952528120A152AE00DAC071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1952528020A152AE00DAC071 /* Assets.xcassets */; };
+		1952528420A152AE00DAC071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1952528220A152AE00DAC071 /* LaunchScreen.storyboard */; };
+		1952528720A152AE00DAC071 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952528620A152AE00DAC071 /* main.m */; };
+		1952529120A152AE00DAC071 /* XKMobileAddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952529020A152AE00DAC071 /* XKMobileAddressBookTests.m */; };
+		1952529C20A152AE00DAC071 /* XKMobileAddressBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1952529B20A152AE00DAC071 /* XKMobileAddressBookUITests.m */; };
+		195252AC20A153C100DAC071 /* XKMobileAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252AB20A153C100DAC071 /* XKMobileAddressBook.m */; };
+		195252AF20A155AB00DAC071 /* XKMobileContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252AE20A155AB00DAC071 /* XKMobileContactModel.m */; };
+		195252BF20A1723900DAC071 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252B420A1723800DAC071 /* NSString+PinYin4Cocoa.m */; };
+		195252C020A1723900DAC071 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252B720A1723800DAC071 /* PinyinHelper.m */; };
+		195252C120A1723900DAC071 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252B920A1723800DAC071 /* HanyuPinyinOutputFormat.m */; };
+		195252C220A1723900DAC071 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252BA20A1723800DAC071 /* ChineseToPinyinResource.m */; };
+		195252C320A1723900DAC071 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 195252BB20A1723800DAC071 /* PinyinFormatter.m */; };
+		195252C420A1723900DAC071 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 195252BE20A1723800DAC071 /* unicode_to_hanyu_pinyin.txt */; };
+		19BCB4BF20A17CCD0076145C /* NSString+XK.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB4BE20A17CCD0076145C /* NSString+XK.m */; };
+		19BCB4C220A18AE00076145C /* XKMobileContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB4C120A18AE00076145C /* XKMobileContactTableViewCell.m */; };
+		5033C8C7BE28CCD7120135EE /* libPods-XKMobileAddressBookUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4AC1B6518A2B4D386A0071 /* libPods-XKMobileAddressBookUITests.a */; };
+		F52538363BB610A4BE55A7CE /* libPods-XKMobileAddressBookTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4777D04FDE220E791F5805 /* libPods-XKMobileAddressBookTests.a */; };
+		F86E2EC8E6E03B968F03D6FC /* libPods-XKMobileAddressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB40307F2DA297B1EE0032D /* libPods-XKMobileAddressBook.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1952528D20A152AE00DAC071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1952526C20A152AD00DAC071 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1952527320A152AD00DAC071;
+			remoteInfo = XKMobileAddressBook;
+		};
+		1952529820A152AE00DAC071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1952526C20A152AD00DAC071 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1952527320A152AD00DAC071;
+			remoteInfo = XKMobileAddressBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1952527420A152AD00DAC071 /* XKMobileAddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XKMobileAddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1952527720A152AD00DAC071 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1952527820A152AD00DAC071 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1952527A20A152AD00DAC071 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1952527B20A152AD00DAC071 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1952527E20A152AD00DAC071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1952528020A152AE00DAC071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1952528320A152AE00DAC071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1952528520A152AE00DAC071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1952528620A152AE00DAC071 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1952528C20A152AE00DAC071 /* XKMobileAddressBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XKMobileAddressBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1952529020A152AE00DAC071 /* XKMobileAddressBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKMobileAddressBookTests.m; sourceTree = "<group>"; };
+		1952529220A152AE00DAC071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1952529720A152AE00DAC071 /* XKMobileAddressBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XKMobileAddressBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1952529B20A152AE00DAC071 /* XKMobileAddressBookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKMobileAddressBookUITests.m; sourceTree = "<group>"; };
+		1952529D20A152AE00DAC071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		195252AA20A153C100DAC071 /* XKMobileAddressBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKMobileAddressBook.h; sourceTree = "<group>"; };
+		195252AB20A153C100DAC071 /* XKMobileAddressBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKMobileAddressBook.m; sourceTree = "<group>"; };
+		195252AD20A155AB00DAC071 /* XKMobileContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKMobileContactModel.h; sourceTree = "<group>"; };
+		195252AE20A155AB00DAC071 /* XKMobileContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKMobileContactModel.m; sourceTree = "<group>"; };
+		195252B220A1723800DAC071 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		195252B320A1723800DAC071 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		195252B420A1723800DAC071 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		195252B520A1723800DAC071 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		195252B620A1723800DAC071 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		195252B720A1723800DAC071 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		195252B820A1723800DAC071 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		195252B920A1723800DAC071 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		195252BA20A1723800DAC071 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		195252BB20A1723800DAC071 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		195252BC20A1723800DAC071 /* PinYin4Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYin4Objc.h; sourceTree = "<group>"; };
+		195252BE20A1723800DAC071 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		19BCB4BD20A17CCD0076145C /* NSString+XK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+XK.h"; sourceTree = "<group>"; };
+		19BCB4BE20A17CCD0076145C /* NSString+XK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+XK.m"; sourceTree = "<group>"; };
+		19BCB4C020A18AE00076145C /* XKMobileContactTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKMobileContactTableViewCell.h; sourceTree = "<group>"; };
+		19BCB4C120A18AE00076145C /* XKMobileContactTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKMobileContactTableViewCell.m; sourceTree = "<group>"; };
+		1E4777D04FDE220E791F5805 /* libPods-XKMobileAddressBookTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XKMobileAddressBookTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC393B905FD6FC5F4C89C81 /* Pods-XKMobileAddressBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBookTests/Pods-XKMobileAddressBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53A7C3CA55EA170369159314 /* Pods-XKMobileAddressBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBook/Pods-XKMobileAddressBook.release.xcconfig"; sourceTree = "<group>"; };
+		5EB40307F2DA297B1EE0032D /* libPods-XKMobileAddressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XKMobileAddressBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B9A9F2717232B186789910B /* Pods-XKMobileAddressBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBookUITests/Pods-XKMobileAddressBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9617852E637232EB85996558 /* Pods-XKMobileAddressBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBookTests/Pods-XKMobileAddressBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB4AC1B6518A2B4D386A0071 /* libPods-XKMobileAddressBookUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XKMobileAddressBookUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC29A6A44D081F391B5D41C5 /* Pods-XKMobileAddressBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBookUITests/Pods-XKMobileAddressBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F68019711DDF0FD6A89B49AC /* Pods-XKMobileAddressBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKMobileAddressBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XKMobileAddressBook/Pods-XKMobileAddressBook.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1952527120A152AD00DAC071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F86E2EC8E6E03B968F03D6FC /* libPods-XKMobileAddressBook.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952528920A152AE00DAC071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52538363BB610A4BE55A7CE /* libPods-XKMobileAddressBookTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952529420A152AE00DAC071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5033C8C7BE28CCD7120135EE /* libPods-XKMobileAddressBookUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1952526B20A152AD00DAC071 = {
+			isa = PBXGroup;
+			children = (
+				1952527620A152AD00DAC071 /* XKMobileAddressBook */,
+				1952528F20A152AE00DAC071 /* XKMobileAddressBookTests */,
+				1952529A20A152AE00DAC071 /* XKMobileAddressBookUITests */,
+				1952527520A152AD00DAC071 /* Products */,
+				C1742565F08379FE54AC4821 /* Pods */,
+				6366778B409FCFF9465C29B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1952527520A152AD00DAC071 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1952527420A152AD00DAC071 /* XKMobileAddressBook.app */,
+				1952528C20A152AE00DAC071 /* XKMobileAddressBookTests.xctest */,
+				1952529720A152AE00DAC071 /* XKMobileAddressBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1952527620A152AD00DAC071 /* XKMobileAddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				195252B020A1723800DAC071 /* PinYin4Objc */,
+				195252A920A153A900DAC071 /* XKMobileAddressBook */,
+				1952527720A152AD00DAC071 /* AppDelegate.h */,
+				1952527820A152AD00DAC071 /* AppDelegate.m */,
+				1952527A20A152AD00DAC071 /* ViewController.h */,
+				1952527B20A152AD00DAC071 /* ViewController.m */,
+				19BCB4C020A18AE00076145C /* XKMobileContactTableViewCell.h */,
+				19BCB4C120A18AE00076145C /* XKMobileContactTableViewCell.m */,
+				1952527D20A152AD00DAC071 /* Main.storyboard */,
+				1952528020A152AE00DAC071 /* Assets.xcassets */,
+				1952528220A152AE00DAC071 /* LaunchScreen.storyboard */,
+				1952528520A152AE00DAC071 /* Info.plist */,
+				1952528620A152AE00DAC071 /* main.m */,
+			);
+			path = XKMobileAddressBook;
+			sourceTree = "<group>";
+		};
+		1952528F20A152AE00DAC071 /* XKMobileAddressBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				1952529020A152AE00DAC071 /* XKMobileAddressBookTests.m */,
+				1952529220A152AE00DAC071 /* Info.plist */,
+			);
+			path = XKMobileAddressBookTests;
+			sourceTree = "<group>";
+		};
+		1952529A20A152AE00DAC071 /* XKMobileAddressBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1952529B20A152AE00DAC071 /* XKMobileAddressBookUITests.m */,
+				1952529D20A152AE00DAC071 /* Info.plist */,
+			);
+			path = XKMobileAddressBookUITests;
+			sourceTree = "<group>";
+		};
+		195252A920A153A900DAC071 /* XKMobileAddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				19BCB4BD20A17CCD0076145C /* NSString+XK.h */,
+				19BCB4BE20A17CCD0076145C /* NSString+XK.m */,
+				195252AD20A155AB00DAC071 /* XKMobileContactModel.h */,
+				195252AE20A155AB00DAC071 /* XKMobileContactModel.m */,
+				195252AA20A153C100DAC071 /* XKMobileAddressBook.h */,
+				195252AB20A153C100DAC071 /* XKMobileAddressBook.m */,
+			);
+			path = XKMobileAddressBook;
+			sourceTree = "<group>";
+		};
+		195252B020A1723800DAC071 /* PinYin4Objc */ = {
+			isa = PBXGroup;
+			children = (
+				195252B120A1723800DAC071 /* Classes */,
+				195252BD20A1723800DAC071 /* Resources */,
+			);
+			path = PinYin4Objc;
+			sourceTree = "<group>";
+		};
+		195252B120A1723800DAC071 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				195252B220A1723800DAC071 /* PinyinHelper.h */,
+				195252B320A1723800DAC071 /* HanyuPinyinOutputFormat.h */,
+				195252B420A1723800DAC071 /* NSString+PinYin4Cocoa.m */,
+				195252B520A1723800DAC071 /* ChineseToPinyinResource.h */,
+				195252B620A1723800DAC071 /* PinyinFormatter.h */,
+				195252B720A1723800DAC071 /* PinyinHelper.m */,
+				195252B820A1723800DAC071 /* NSString+PinYin4Cocoa.h */,
+				195252B920A1723800DAC071 /* HanyuPinyinOutputFormat.m */,
+				195252BA20A1723800DAC071 /* ChineseToPinyinResource.m */,
+				195252BB20A1723800DAC071 /* PinyinFormatter.m */,
+				195252BC20A1723800DAC071 /* PinYin4Objc.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		195252BD20A1723800DAC071 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				195252BE20A1723800DAC071 /* unicode_to_hanyu_pinyin.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6366778B409FCFF9465C29B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EB40307F2DA297B1EE0032D /* libPods-XKMobileAddressBook.a */,
+				1E4777D04FDE220E791F5805 /* libPods-XKMobileAddressBookTests.a */,
+				AB4AC1B6518A2B4D386A0071 /* libPods-XKMobileAddressBookUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1742565F08379FE54AC4821 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F68019711DDF0FD6A89B49AC /* Pods-XKMobileAddressBook.debug.xcconfig */,
+				53A7C3CA55EA170369159314 /* Pods-XKMobileAddressBook.release.xcconfig */,
+				2BC393B905FD6FC5F4C89C81 /* Pods-XKMobileAddressBookTests.debug.xcconfig */,
+				9617852E637232EB85996558 /* Pods-XKMobileAddressBookTests.release.xcconfig */,
+				EC29A6A44D081F391B5D41C5 /* Pods-XKMobileAddressBookUITests.debug.xcconfig */,
+				7B9A9F2717232B186789910B /* Pods-XKMobileAddressBookUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1952527320A152AD00DAC071 /* XKMobileAddressBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195252A020A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBook" */;
+			buildPhases = (
+				F0EA8B6122F6CD8168AA8A73 /* [CP] Check Pods Manifest.lock */,
+				1952527020A152AD00DAC071 /* Sources */,
+				1952527120A152AD00DAC071 /* Frameworks */,
+				1952527220A152AD00DAC071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XKMobileAddressBook;
+			productName = XKMobileAddressBook;
+			productReference = 1952527420A152AD00DAC071 /* XKMobileAddressBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1952528B20A152AE00DAC071 /* XKMobileAddressBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195252A320A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBookTests" */;
+			buildPhases = (
+				11A5558BE0E81124EE33D73D /* [CP] Check Pods Manifest.lock */,
+				1952528820A152AE00DAC071 /* Sources */,
+				1952528920A152AE00DAC071 /* Frameworks */,
+				1952528A20A152AE00DAC071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1952528E20A152AE00DAC071 /* PBXTargetDependency */,
+			);
+			name = XKMobileAddressBookTests;
+			productName = XKMobileAddressBookTests;
+			productReference = 1952528C20A152AE00DAC071 /* XKMobileAddressBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1952529620A152AE00DAC071 /* XKMobileAddressBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195252A620A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBookUITests" */;
+			buildPhases = (
+				C48F6AC284345A1C483CDC4C /* [CP] Check Pods Manifest.lock */,
+				1952529320A152AE00DAC071 /* Sources */,
+				1952529420A152AE00DAC071 /* Frameworks */,
+				1952529520A152AE00DAC071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1952529920A152AE00DAC071 /* PBXTargetDependency */,
+			);
+			name = XKMobileAddressBookUITests;
+			productName = XKMobileAddressBookUITests;
+			productReference = 1952529720A152AE00DAC071 /* XKMobileAddressBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1952526C20A152AD00DAC071 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "重楼";
+				TargetAttributes = {
+					1952527320A152AD00DAC071 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					1952528B20A152AE00DAC071 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 1952527320A152AD00DAC071;
+					};
+					1952529620A152AE00DAC071 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 1952527320A152AD00DAC071;
+					};
+				};
+			};
+			buildConfigurationList = 1952526F20A152AD00DAC071 /* Build configuration list for PBXProject "XKMobileAddressBook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1952526B20A152AD00DAC071;
+			productRefGroup = 1952527520A152AD00DAC071 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1952527320A152AD00DAC071 /* XKMobileAddressBook */,
+				1952528B20A152AE00DAC071 /* XKMobileAddressBookTests */,
+				1952529620A152AE00DAC071 /* XKMobileAddressBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1952527220A152AD00DAC071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195252C420A1723900DAC071 /* unicode_to_hanyu_pinyin.txt in Resources */,
+				1952528420A152AE00DAC071 /* LaunchScreen.storyboard in Resources */,
+				1952528120A152AE00DAC071 /* Assets.xcassets in Resources */,
+				1952527F20A152AD00DAC071 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952528A20A152AE00DAC071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952529520A152AE00DAC071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11A5558BE0E81124EE33D73D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XKMobileAddressBookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C48F6AC284345A1C483CDC4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XKMobileAddressBookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0EA8B6122F6CD8168AA8A73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XKMobileAddressBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1952527020A152AD00DAC071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195252AC20A153C100DAC071 /* XKMobileAddressBook.m in Sources */,
+				1952527C20A152AD00DAC071 /* ViewController.m in Sources */,
+				195252C220A1723900DAC071 /* ChineseToPinyinResource.m in Sources */,
+				19BCB4C220A18AE00076145C /* XKMobileContactTableViewCell.m in Sources */,
+				195252C120A1723900DAC071 /* HanyuPinyinOutputFormat.m in Sources */,
+				1952528720A152AE00DAC071 /* main.m in Sources */,
+				195252C320A1723900DAC071 /* PinyinFormatter.m in Sources */,
+				195252C020A1723900DAC071 /* PinyinHelper.m in Sources */,
+				19BCB4BF20A17CCD0076145C /* NSString+XK.m in Sources */,
+				195252BF20A1723900DAC071 /* NSString+PinYin4Cocoa.m in Sources */,
+				1952527920A152AD00DAC071 /* AppDelegate.m in Sources */,
+				195252AF20A155AB00DAC071 /* XKMobileContactModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952528820A152AE00DAC071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1952529120A152AE00DAC071 /* XKMobileAddressBookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1952529320A152AE00DAC071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1952529C20A152AE00DAC071 /* XKMobileAddressBookUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1952528E20A152AE00DAC071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1952527320A152AD00DAC071 /* XKMobileAddressBook */;
+			targetProxy = 1952528D20A152AE00DAC071 /* PBXContainerItemProxy */;
+		};
+		1952529920A152AE00DAC071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1952527320A152AD00DAC071 /* XKMobileAddressBook */;
+			targetProxy = 1952529820A152AE00DAC071 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1952527D20A152AD00DAC071 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1952527E20A152AD00DAC071 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1952528220A152AE00DAC071 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1952528320A152AE00DAC071 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1952529E20A152AE00DAC071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1952529F20A152AE00DAC071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		195252A120A152AE00DAC071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F68019711DDF0FD6A89B49AC /* Pods-XKMobileAddressBook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93NAX8BU5X;
+				INFOPLIST_FILE = XKMobileAddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		195252A220A152AE00DAC071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53A7C3CA55EA170369159314 /* Pods-XKMobileAddressBook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93NAX8BU5X;
+				INFOPLIST_FILE = XKMobileAddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		195252A420A152AE00DAC071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC393B905FD6FC5F4C89C81 /* Pods-XKMobileAddressBookTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XKMobileAddressBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XKMobileAddressBook.app/XKMobileAddressBook";
+			};
+			name = Debug;
+		};
+		195252A520A152AE00DAC071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9617852E637232EB85996558 /* Pods-XKMobileAddressBookTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XKMobileAddressBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XKMobileAddressBook.app/XKMobileAddressBook";
+			};
+			name = Release;
+		};
+		195252A720A152AE00DAC071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC29A6A44D081F391B5D41C5 /* Pods-XKMobileAddressBookUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XKMobileAddressBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBookUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XKMobileAddressBook;
+			};
+			name = Debug;
+		};
+		195252A820A152AE00DAC071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B9A9F2717232B186789910B /* Pods-XKMobileAddressBookUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XKMobileAddressBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.XKMobileAddressBookUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XKMobileAddressBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1952526F20A152AD00DAC071 /* Build configuration list for PBXProject "XKMobileAddressBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1952529E20A152AE00DAC071 /* Debug */,
+				1952529F20A152AE00DAC071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		195252A020A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195252A120A152AE00DAC071 /* Debug */,
+				195252A220A152AE00DAC071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		195252A320A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195252A420A152AE00DAC071 /* Debug */,
+				195252A520A152AE00DAC071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		195252A620A152AE00DAC071 /* Build configuration list for PBXNativeTarget "XKMobileAddressBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195252A720A152AE00DAC071 /* Debug */,
+				195252A820A152AE00DAC071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1952526C20A152AD00DAC071 /* Project object */;
+}
